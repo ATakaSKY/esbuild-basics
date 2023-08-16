@@ -1084,7 +1084,7 @@
             }
             return dispatcher.useContext(Context);
           }
-          function useState(initialState) {
+          function useState2(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1886,7 +1886,7 @@
           exports.useMemo = useMemo;
           exports.useReducer = useReducer;
           exports.useRef = useRef;
-          exports.useState = useState;
+          exports.useState = useState2;
           exports.useSyncExternalStore = useSyncExternalStore;
           exports.useTransition = useTransition;
           exports.version = ReactVersion;
@@ -23479,8 +23479,26 @@
   // src/App.jsx
   var import_react = __toESM(require_react());
   var import_react_dom = __toESM(require_react_dom());
+  var quotes = [
+    {
+      content: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+      author: "Martin Fowler"
+    },
+    {
+      content: "Truth can only be found in one place: the code.",
+      author: "Robert C. Martin"
+    },
+    {
+      content: "Optimism is an occupational hazard of programming: feedback is the treatment.",
+      author: "Kent Beck"
+    }
+  ];
   function App() {
-    return /* @__PURE__ */ import_react.default.createElement("div", null, "Hello, esbuild!");
+    const [index, setIndex] = (0, import_react.useState)(0);
+    const clickHandler = () => {
+      setIndex((index2) => (index2 + 1) % 3);
+    };
+    return /* @__PURE__ */ import_react.default.createElement(import_react.default.Fragment, null, /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("p", { className: "content" }, quotes[index].content), /* @__PURE__ */ import_react.default.createElement("p", null, /* @__PURE__ */ import_react.default.createElement("span", { className: "author" }, "\u2014 ", quotes[index].author))), /* @__PURE__ */ import_react.default.createElement("button", { onClick: clickHandler }, "next"));
   }
   import_react_dom.default.render(/* @__PURE__ */ import_react.default.createElement(App, null), document.getElementById("root"));
 })();
