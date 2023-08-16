@@ -6,7 +6,7 @@ Install esbuild globally:
 Confirm install:
 `esbuild --version`
 
-### Test with typescript
+## Test with typescript
 
 Create `input_typescript.ts` and add:
 
@@ -20,13 +20,18 @@ Run this with esbuild:
 
 This will output a transpiled js file.
 
-#### Breaking above esbuild command
+### Breaking above esbuild command
 
 `esbuild` - command to run process
+<br />
 `input_typescript.ts` - input file
+<br />
 `--outfile` - where to put output
+<br />
 `--bundle` - will inline all dependencies into the output file
+<br />
 `--loader` - use to load the TypeScript file extension, however can be omitted as esbuild can automatically which loader to use
+<br />
 
 Output with bundle option:
 
