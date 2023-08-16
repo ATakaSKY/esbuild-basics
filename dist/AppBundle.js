@@ -23476,7 +23476,7 @@
     }
   });
 
-  // src/App.js
+  // src/App.jsx
   var import_react = __toESM(require_react());
   var import_react_dom = __toESM(require_react_dom());
   function App() {
