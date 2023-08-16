@@ -1,5 +1,13 @@
 {
+  "scripts": {
+    "build_js": "esbuild input_typescript.ts --bundle --outfile=js_output.js --watch --serve=localhost:8000 --servedir=.",
+    "build_react": "esbuild src/App.jsx --bundle --outfile=react_output.js",
+    "build_css": "esbuild css/style.css --outfile=dist/css/out.css --bundle --minify",
+    "build_image": "esbuild public/js/input_image.js --bundle --loader:.png=dataurl --loader:.jpg=file --outfile=public/out_image.js"
+  },
   "dependencies": {
+    "esbuild": "^0.19.2",
+    "esbuild-plugin-sass": "^1.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
